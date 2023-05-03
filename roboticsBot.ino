@@ -5,9 +5,10 @@
 #include <Arduino.h>
 
 //Wifi and MQTT Setup
-#define WIFI_SSID "Elmore WiFi"
-#define WIFI_PASSWORD "2704038770"
-#define MQTT_SERVER "192.168.50.141"
+#define WIFI_SSID "WIFI_SSID_GOES_HERE"
+#define WIFI_PASSWORD "WIFI_PASSWORD_GOES_HERE"
+//Mosquitto MQTT Server IP and port number
+#define MQTT_SERVER "192.168.x.x" 
 #define MQTT_PORT 1883
 
 
@@ -28,8 +29,8 @@
 #define IN3b 14
 #define IN4b 27
 
-const char* MQTT_USERNAME = "jasonelmore";
-const char* MQTT_PASSWORD = "Apples71";
+const char* MQTT_USERNAME = "Mosquitto_username";
+const char* MQTT_PASSWORD = "Mosquitto_password";
 float duration = 0.0;
 float cm = 0.0;
 float inches = 0.0;
@@ -107,7 +108,7 @@ while ((!(WiFi.status() == WL_CONNECTED)))
   Serial.print((WiFi.localIP()));
   Serial.print("");
   Serial.println("");
-  if (mqtt.connect("ESPClient", "jasonelmore", "Apples71")) {
+  if (mqtt.connect("ESPClient", "mqtt_username_goes_here", "mqtt_password_goes_here")) {
     mqtt.subscribe("control/motor");
   }
   Serial.println("Subscribe successful!");
@@ -189,7 +190,7 @@ float measureDistance(){
 void mqttReconnect() {
   while (!mqtt.connected()) {
     Serial.print("Attempting MQTT connection...");
-    if (mqtt.connect("ESPClient", "jasonelmore", "Apples71")) {
+    if (mqtt.connect("ESPClient", "mqtt_username_goes_here", "mqtt_password_goes_here")) {
       Serial.println("connected");
       mqtt.subscribe("control/motor");
     }
