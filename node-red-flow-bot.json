@@ -1,0 +1,501 @@
+[
+    {
+        "id": "53deda4226a9160d",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dc1121a25886dd4d",
+        "type": "mqtt-broker",
+        "name": "Mosquito",
+        "broker": "localhost",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cd275d1dd53b1c86",
+        "type": "ui_tab",
+        "name": "userInterface",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "416d58314f27f82e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "e6aea64d9df4003f",
+        "type": "ui_group",
+        "name": "Charts",
+        "tab": "",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3921f31d3b5c848f",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "cd275d1dd53b1c86",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "4db326557b784071",
+        "type": "mqtt in",
+        "z": "53deda4226a9160d",
+        "name": "sensors/temperature",
+        "topic": "sensors/temperature",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dc1121a25886dd4d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 410,
+        "y": 200,
+        "wires": [
+            [
+                "162dd98cbc734b48"
+            ]
+        ]
+    },
+    {
+        "id": "4693223fc7dccfa9",
+        "type": "mqtt in",
+        "z": "53deda4226a9160d",
+        "name": "sensors/humidity",
+        "topic": "sensors/humidity",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dc1121a25886dd4d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 400,
+        "y": 240,
+        "wires": [
+            [
+                "1c0b2488fac397fb"
+            ]
+        ]
+    },
+    {
+        "id": "3490199204e2f25b",
+        "type": "mqtt in",
+        "z": "53deda4226a9160d",
+        "name": "sensors/distance",
+        "topic": "sensors/distance",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "dc1121a25886dd4d",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 400,
+        "y": 280,
+        "wires": [
+            [
+                "f5dcb39db0c97a02"
+            ]
+        ]
+    },
+    {
+        "id": "162dd98cbc734b48",
+        "type": "ui_chart",
+        "z": "53deda4226a9160d",
+        "name": "temperatureChart",
+        "group": "3921f31d3b5c848f",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "temperatureChart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 870,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c0b2488fac397fb",
+        "type": "ui_chart",
+        "z": "53deda4226a9160d",
+        "name": "humidityChart",
+        "group": "3921f31d3b5c848f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "humidityChart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 860,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f5dcb39db0c97a02",
+        "type": "ui_gauge",
+        "z": "53deda4226a9160d",
+        "name": "distanceGuage",
+        "group": "3921f31d3b5c848f",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "distanceGauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 860,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "618a9d1a8ce22b01",
+        "type": "mqtt out",
+        "z": "53deda4226a9160d",
+        "name": "Mosquitoo_MQTT",
+        "topic": "control/motor",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "dc1121a25886dd4d",
+        "x": 1010,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "0625b0851c3821dc",
+        "type": "ui_button",
+        "z": "53deda4226a9160d",
+        "name": "Right",
+        "group": "3921f31d3b5c848f",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Right",
+        "tooltip": "Turns the robot right",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "R",
+        "payloadType": "str",
+        "topic": "control/motor",
+        "topicType": "msg",
+        "x": 610,
+        "y": 580,
+        "wires": [
+            [
+                "618a9d1a8ce22b01"
+            ]
+        ]
+    },
+    {
+        "id": "91051c6d187343a2",
+        "type": "ui_button",
+        "z": "53deda4226a9160d",
+        "name": "Back",
+        "group": "3921f31d3b5c848f",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Back",
+        "tooltip": "Moves the robot in reverse",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "B",
+        "payloadType": "str",
+        "topic": "control/motor",
+        "topicType": "msg",
+        "x": 470,
+        "y": 660,
+        "wires": [
+            [
+                "618a9d1a8ce22b01"
+            ]
+        ]
+    },
+    {
+        "id": "9700fe9174f62719",
+        "type": "ui_button",
+        "z": "53deda4226a9160d",
+        "name": "Forward",
+        "group": "3921f31d3b5c848f",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Forward",
+        "tooltip": "Moves the robot forward",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "F",
+        "payloadType": "str",
+        "topic": "control/motor",
+        "topicType": "msg",
+        "x": 480,
+        "y": 500,
+        "wires": [
+            [
+                "618a9d1a8ce22b01"
+            ]
+        ]
+    },
+    {
+        "id": "50a37a4fdfb1db0e",
+        "type": "ui_button",
+        "z": "53deda4226a9160d",
+        "name": "Left",
+        "group": "3921f31d3b5c848f",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Left",
+        "tooltip": "Turns the robot to the left",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "L",
+        "payloadType": "str",
+        "topic": "control/motor",
+        "topicType": "msg",
+        "x": 310,
+        "y": 580,
+        "wires": [
+            [
+                "618a9d1a8ce22b01"
+            ]
+        ]
+    },
+    {
+        "id": "eb03e0193982708e",
+        "type": "ui_button",
+        "z": "53deda4226a9160d",
+        "name": "Stop",
+        "group": "3921f31d3b5c848f",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "Full Stop",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "S",
+        "payloadType": "str",
+        "topic": "control/motor",
+        "topicType": "msg",
+        "x": 470,
+        "y": 580,
+        "wires": [
+            [
+                "618a9d1a8ce22b01"
+            ]
+        ]
+    }
+]
